@@ -5,6 +5,7 @@ import com.ecommerce.sportcenter.model.ProductResponse;
 import com.ecommerce.sportcenter.repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 
@@ -36,13 +37,25 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Page<ProductResponse> getAllProducts(Pageable pageable) {
-        Page<Product> productPage = productRepository.findAll(pageable);
+    public Page<ProductResponse> getAllProducts(Pageable pageable, Integer brandId, Integer typeId, String search) {
 
-        Page<ProductResponse> productResponses = productPage.map(this::toConvertResponse);
+        Specification<Product> spec = (root, query, cb) -> cb.conjunction();
 
-        return productResponses;
+        if(brandId != null){
+            spec = spec.and(((root, query, criteriaBuilder) ->  criteriaBuilder.equal(root.get("brand").get("id"), brandId)));
+        }
 
+        if(typeId != null){
+            spec = spec.and(((root, query, criteriaBuilder) ->  criteriaBuilder.equal(root.get("type").get("id"), typeId)));
+        }
+
+        if(search != null && !search.isEmpty()){
+            spec = spec.and(((root, query, criteriaBuilder) ->  criteriaBuilder.like(root.get("name"), "%" + search + "%")));
+        }
+
+
+        return productRepository.findAll(spec, pageable)
+                .map(this::toConvertResponse);
 
     }
 

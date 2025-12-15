@@ -4,11 +4,13 @@ import com.ecommerce.sportcenter.model.ProductResponse;
 import com.ecommerce.sportcenter.service.BrandService;
 import com.ecommerce.sportcenter.service.ProductService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -28,9 +30,18 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<Map<String, Object>> getAllProducts(
-            @PageableDefault(size = 10) Pageable pageable
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "10") int size,
+            @RequestParam(name = "keyword", required = false) String keyword,
+            @RequestParam(name = "brandId", required = false) Integer brandId,
+            @RequestParam(name = "typeId", required = false) Integer typeId,
+            @RequestParam(name = "sort", defaultValue = "name") String sort,
+            @RequestParam(name = "order" , defaultValue = "asc") String order
     ){
-        Page<ProductResponse> productResponse = productService.getAllProducts(pageable);
+
+        Pageable pageable = PageRequest.of(page, size);
+
+        Page<ProductResponse> productResponse = productService.getAllProducts(pageable, brandId, typeId, keyword);
 
         Map<String, Object> response = new HashMap<>();
 
