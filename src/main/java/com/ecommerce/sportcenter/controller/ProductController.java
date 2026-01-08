@@ -6,6 +6,7 @@ import com.ecommerce.sportcenter.service.ProductService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,11 +36,14 @@ public class ProductController {
             @RequestParam(name = "keyword", required = false) String keyword,
             @RequestParam(name = "brandId", required = false) Integer brandId,
             @RequestParam(name = "typeId", required = false) Integer typeId,
-            @RequestParam(name = "sort", defaultValue = "name") String sort,
+            @RequestParam(name = "sort", defaultValue = "id") String sort,
             @RequestParam(name = "order" , defaultValue = "asc") String order
     ){
 
-        Pageable pageable = PageRequest.of(page, size);
+        Sort.Direction sortDirection = order.equalsIgnoreCase("desc") ? Sort.Direction.DESC : Sort.Direction.ASC;
+        Sort sortOrder = Sort.by(sortDirection, sort);
+
+        Pageable pageable = PageRequest.of(page, size, sortOrder);
 
         Page<ProductResponse> productResponse = productService.getAllProducts(pageable, brandId, typeId, keyword);
 
