@@ -1,6 +1,6 @@
 package com.ecommerce.sportcenter.controller;
 
-import com.ecommerce.sportcenter.model.TypeResponse;
+import com.ecommerce.sportcenter.dto.response.TypeResponse;
 import com.ecommerce.sportcenter.service.TypeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

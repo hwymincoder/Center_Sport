@@ -1,7 +1,7 @@
 package com.ecommerce.sportcenter.service;
 
 import com.ecommerce.sportcenter.entity.Product;
-import com.ecommerce.sportcenter.model.ProductResponse;
+import com.ecommerce.sportcenter.dto.response.ProductResponse;
 import com.ecommerce.sportcenter.repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

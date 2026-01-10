@@ -1,0 +1,190 @@
+.product-demo {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-demo h1 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.loading {
+    padding: 1rem;
+    background: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.error {
+    padding: 1rem;
+    background: #fee;
+    color: #c33;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.product-list {
+    margin: 2rem 0;
+}
+
+.product-list h2 {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.btn-refresh {
+    padding: 0.5rem 1rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-refresh:hover {
+    background: #5568d3;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    margin: 0.5rem 0;
+}
+
+.product-brand,
+.product-type {
+    color: #888;
+    font-size: 0.85rem;
+    margin: 0.25rem 0;
+}
+
+.btn-detail {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-detail:hover {
+    background: #5568d3;
+}
+
+.product-detail {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.product-detail h2 {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.btn-close {
+    padding: 0.5rem 1rem;
+    background: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+}
+
+.btn-close:hover {
+    background: #bbb;
+}
+
+.detail-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.detail-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.detail-card p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.detail-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.code-example {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #2d2d2d;
+    border-radius: 12px;
+    color: white;
+}
+
+.code-example h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.code-example pre {
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}

@@ -1,6 +1,6 @@
 package com.ecommerce.sportcenter.service;
 
-import com.ecommerce.sportcenter.model.TypeResponse;
+import com.ecommerce.sportcenter.dto.response.TypeResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

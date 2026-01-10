@@ -1,4 +1,4 @@
-package com.ecommerce.sportcenter.model;
+package com.ecommerce.sportcenter.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BrandResponse {
+public class TypeResponse {
 
     private Integer id;
     private String name;

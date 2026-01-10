@@ -1,7 +1,7 @@
 package com.ecommerce.sportcenter.service;
 
 import com.ecommerce.sportcenter.entity.Brand;
-import com.ecommerce.sportcenter.model.BrandResponse;
+import com.ecommerce.sportcenter.dto.response.BrandResponse;
 import com.ecommerce.sportcenter.repository.BrandRepository;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.ecommerce.sportcenter.model;
+package com.ecommerce.sportcenter.dto.response;
 
 
 import lombok.AllArgsConstructor;

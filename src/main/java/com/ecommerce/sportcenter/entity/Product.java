@@ -1,12 +1,10 @@
 package com.ecommerce.sportcenter.entity;
 
-import com.ecommerce.sportcenter.model.ProductResponse;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.domain.Page;
 
 @Entity
 @Table(name = "Product")

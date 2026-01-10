@@ -1,7 +1,7 @@
 package com.ecommerce.sportcenter.service;
 
 import com.ecommerce.sportcenter.entity.Type;
-import com.ecommerce.sportcenter.model.TypeResponse;
+import com.ecommerce.sportcenter.dto.response.TypeResponse;
 import com.ecommerce.sportcenter.repository.TypeRepository;
 import org.springframework.stereotype.Component;
 

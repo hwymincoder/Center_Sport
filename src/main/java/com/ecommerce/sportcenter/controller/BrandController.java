@@ -1,6 +1,6 @@
 package com.ecommerce.sportcenter.controller;
 
-import com.ecommerce.sportcenter.model.BrandResponse;
+import com.ecommerce.sportcenter.dto.response.BrandResponse;
 import com.ecommerce.sportcenter.service.BrandService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
